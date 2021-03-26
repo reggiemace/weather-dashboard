@@ -1,27 +1,25 @@
 header {
-  background-color: slategrey;
+  background-color: #0072b5;
   color: white;
   text-align: center;
   padding: 20px;
   margin-bottom: 10px;
 }
-/* .search-city-col {
-  background-color: beige;
-} */
-.card .li {
-  background-color: blue;
+body {
+  margin: 3px;
 }
+
 .search-city {
   border-style: groove;
-  margin: 10px, 0, 0, 20px;
+  /* margin: 1px; */
   padding: 10px;
-  border-radius: 25px;
-  background-color: beige;
+  border-radius: 5px;
+  background-color: 95% #f2f2f3;
 }
 
 .custom-card {
   width: 200px;
-  background-color: lightskyblue;
+  background-color: #0072b5;
   color: white;
   float: left;
   clear: none;
@@ -30,7 +28,11 @@ header {
 }
 .ccn {
   border-style: groove;
-  /* margin: 10px; */
   padding: 10px;
-  border-radius: 25px;
+  border-radius: 5px;
+  background-color: #9bb7d4;
+  color: white;
+}
+div li {
+  list-style: none;
 }
