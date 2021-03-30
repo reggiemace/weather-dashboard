@@ -42,5 +42,16 @@ div li {
 }
 img {
   height: 50px;
-  width: 50px;
+}
+.searched-city {
+  background-color: #9bb7d4;
+  padding: 1px;
+  margin: 5px;
+  text-align: center;
+  color: white;
+}
+.searched-city:hover {
+  background-color: lightgoldenrodyellow;
+  color: #000;
+  transform: scale(1);
 }

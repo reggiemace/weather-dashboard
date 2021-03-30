@@ -13,9 +13,11 @@ var forecastSection = document.querySelector("#forecast-div");
 var searchHistory = document.querySelector("#searchHistory");
 var clearButton = document.querySelector("#clearBtn");
 var searchedCity = document.querySelector("#searched-city");
+var foreCastHeader = document.querySelector("#current-city-name");
 
 window.onload = function () {
   forecastSection.style.display = "none";
+  foreCastHeader.style.display = "none";
 };
 
 // Search city
@@ -102,7 +104,7 @@ function getForecast(cityName) {
             <p>${futureDay}</p>
             <p><img src="${futureDayUrl}"></p>
             <p>Temperature: ${futureTemp}&deg;F</p>
-            <p>Humidity: ${futureHumid}</p>
+            <p>Humidity: ${futureHumid}%</p>
           </div>
         `).appendTo("#forecast-div");
       }
@@ -114,7 +116,7 @@ function displayWeatherInfo() {
   currentCityName.innerHTML = localStorage.getItem("City");
   currentCityTemp.innerHTML =
     localStorage.getItem("Temperature") + "&deg" + "F";
-  currentCityHumidity.innerHTML = localStorage.getItem("Humidity");
+  currentCityHumidity.innerHTML = localStorage.getItem("Humidity") + "%";
   currentCityWindSpeed.innerHTML = localStorage.getItem("Wind Speed");
   currentDay.innerHTML = localStorage.getItem("Current Day");
   //iconVal = localStorage.getItem("Icon");
@@ -139,6 +141,8 @@ searchBtn.addEventListener("click", function (e) {
   searchCity();
   document.getElementById("search-field").value = " ";
   displaySearchHistory();
+  // clear div of previous five day search
+  $("#forecast-div").empty();
 });
 clearButton.addEventListener("click", function () {
   localStorage.clear();
