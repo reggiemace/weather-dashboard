@@ -72,6 +72,7 @@ function getCityWeatherInfo(cityName) {
     });
   displayWeatherInfo();
   forecastSection.style.display = "block";
+  foreCastHeader.style.display = "block";
 }
 function getForecast(cityName) {
   var requestUrl =
