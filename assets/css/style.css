@@ -16,7 +16,10 @@ body {
   border-radius: 5px;
   background-color: 95% #f2f2f3;
 }
-
+#searchHistory {
+  margin: 20px;
+}
+/*  */
 .custom-card {
   width: 200px;
   background-color: #0072b5;
@@ -25,6 +28,7 @@ body {
   clear: none;
   margin: 30px;
   overflow: auto;
+  padding: 10px;
 }
 .ccn {
   border-style: groove;
@@ -35,4 +39,8 @@ body {
 }
 div li {
   list-style: none;
+}
+img {
+  height: 50px;
+  width: 50px;
 }
