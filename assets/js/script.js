@@ -61,9 +61,15 @@ function getCityWeatherInfo(cityName) {
       currentCityUV.innerHTML = "coming soon!!!!";
 
       // Set City Name to city Array
-      currentCityArray.push(currentCity);
+      if (currentCityArray.indexOf(currentCity) == -1) {
+        currentCityArray.push(currentCity);
+        localStorage.setItem("cities", JSON.stringify(currentCityArray));
+      }
+
       localStorage.setItem("City", currentCity);
-      localStorage.setItem("cities", JSON.stringify(currentCityArray));
+
+      // make the ajax call here
+      console.log(data.coord.lat);
     });
   // Show forecast section after a city has been searched
   forecastSection.style.display = "block";
@@ -119,6 +125,7 @@ function getForecast(cityName) {
 
 /* Display previously search cities and make call to show data*/
 function displaySearchHistory() {
+  $('#searchHistory').html('')
   for (var i = 0; i < currentCityArray.length; i++) {
     var searchCity = currentCityArray[i];
     $(`
@@ -128,6 +135,8 @@ function displaySearchHistory() {
         `).appendTo("#searchHistory");
   }
 }
+
+displaySearchHistory();
 
 searchBtn.addEventListener("click", function (e) {
   e.preventDefault();
